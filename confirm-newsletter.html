@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Email</title>
+
+    <meta charset="utf-8">
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Fira+Sans');
+      @import url('https://fonts.googleapis.com/css?family=Vollkorn');
+
+     .email-background {
+       background: #eee;
+       padding: 10px;
+     }
+
+     .email-container, .pre-header {
+       max-width: 500px;
+       background: white;
+       margin: 0 auto;
+       overflow: hidden;
+       border-radius: 5px;
+     }
+
+     .pre-header {
+       background: #eee;
+       color: #eee;
+       font-size: 5px;
+     }
+
+     p {
+       font-family: 'Vollkorn', serif;
+       margin: 20px;
+       font-size: 16px;
+       font-weight: 300;
+       text-align: center;
+       line-height: 1.5;
+     }
+
+     h3 {
+       font-family: 'Vollkorn', serif;
+       text-align: center;
+     }
+
+     img {
+       max-width: 100%
+     }
+
+     h1, h2, h4, h5, h6 {
+       font-family: 'Fira Sans', sans-serif;
+       text-align: center;
+       color: black; !important;
+     }
+
+     h2 {
+       margin-left: 3px;
+       margin-right: 3px;
+     }
+
+     a {
+       text-decoration: none;
+     }
+
+     h1:hover {
+       color: #46C9BE;
+     }
+
+     .article h4:hover {
+       color: #46C9BE;
+     }
+
+     .small {
+       border-top: dotted 1px;
+       width: 95%;
+     }
+
+     .big {
+       border-top: solid 1px;
+       width: 95%;
+     }
+
+     #button-confirm {
+       text-align: center;
+       margin: 10px;
+     }
+
+      #button-confirm a {
+       margin: 0 auto;
+       color: white;
+       background: #46C9BE;
+       display: inline-block;
+       padding: 10px 20px;
+       border-radius: 5px;
+     }
+
+     #button-confirm a:hover {
+       color: black;
+     }
+    </style>
+  </head>
+  <body>
+
+
+<link href="https://fonts.googleapis.com/css?family=Vollkorn" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+
+    <div class="email-background" style="background: #eee;">
+      <div class="pre-header" style="max-width: 500px;background: #eee;margin: 0 auto;overflow: hidden;border-radius: 5px;color: #eee;font-size: 5px;">
+        Bestätige die Anmeldung zu meinem Newsletter!
+      </div>
+
+      <div class="email-container" style="max-width: 500px;background: white;margin: 0 auto;overflow: hidden;border-radius: 5px;">
+        <a href="http://blog.lucas-hild.de" target="_blank" style="text-decoration: none;"><h1 style="font-family: 'Fira Sans', sans-serif;text-align: center;color: black;!important: ;">Lucas Hild</h1></a>
+        <h3 style="font-family: 'Vollkorn', serif;text-align: center;">Fotografie und Technik</h3>
+        <img src="https://blog.lucas-hild.de/wp-content/uploads/2017/03/Header.jpg" style="max-width: 100%;">
+
+        <h2 style="font-family: 'Fira Sans', sans-serif;text-align: center;color: black;!important: ;">Bestätige die Anmeldung zu meinem Newsletter!</h2>
+        <p>Hallo,</p>
+        <p>Du hast Dich für meinen Newsletter angemeldet. Nun musst Du dies nur noch bestätigen! Klicke dafür auf diesen Button:</p>
+
+        <div id="button-confirm">
+          <a href="https://lanseuo.herokuapp.com/newsletter/confirm?mail=put_mail_here&confirmation_code=put_confirmation_code_here">Anmeldung bestätigen!</a>
+        </div>
+
+        <p>Ab jetzt erhälst Du einmal im Monat, meist am Ende des Monats, eine Zusammenfassung meiner neusten Artikel. Außerdem erfährst Du, welche Artikel mir diesen Monat besonders gut gefallen haben. Viel Spaß damit!</p>
+
+    </div>
+  </body>
+</html>
