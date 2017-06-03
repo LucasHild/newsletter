@@ -4,22 +4,21 @@ import email.utils
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from time import sleep
-import pymongo
-from pymongo import MongoClient
+import requests
+
 
 def get_users():
-    uri = "mongodb://" + config.mongodb_username + ":" + config.mongodb_password + "@" + config.mongodb_host + ":" + config.mongodb_port + "/" + config.mongodb_db
-    client = MongoClient(uri)
-    db = client.newsletter
-    users = db.users
-    userList = [user for user in users.find()]
+    r = requests.get("https://lanseuo.herokuapp.com/newsletter?password=" + config.api_password).json()
+    userList = [user for user in r if user["state"] == "confirmed"]
     return userList
+
 
 def get_file(filename):
     with open(filename, "r") as f:
         content = f.read()
         f.close()
     return content
+
 
 def sendTestMail():
     """Test it by sending mail to me"""
