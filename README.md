@@ -3,15 +3,10 @@ Newsletter system for my blog
 
 ### [newsletter.py](https://github.com/Lanseuo/newsletter/blob/master/newsletter.py)
 
-API handling GET and POST requests
+WebApp and API
 
-The API is written in [Flask](http://flask.pocoo.org/). There are several API endpoints for subscribing and unsubscribing to the newsletter. The data is stored in a MongoDB-Database
-
-### [send_newsletter.py](https://github.com/Lanseuo/newsletter/blob/master/send_newsletter.py)
-
-Sending issues
-
-You specify the html template and the mail will be send to all users from db.
+The WebApp lets you create and send new issues and lets you know who is subscribed to the newsletter
+The API is written in [Flask](http://flask.pocoo.org/). There are several API endpoints for subscribing and unsubscribing to the newsletter. The data is stored in a MongoDB-Database.
 
 ### [template.html](https://github.com/Lanseuo/newsletter/blob/master/template.html)
 

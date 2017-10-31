@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans');
+@import url('https://fonts.googleapis.com/css?family=Vollkorn');
+
+.lucas-newsletter .email-background {
+  background: #eee;
+  padding: 10px;
+}
+
+.lucas-newsletter .email-container, .lucas-newsletter .pre-header {
+ max-width: 500px;
+ background: white;
+ margin: 0 auto;
+ overflow: hidden;
+ border-radius: 5px;
+}
+
+.lucas-newsletter .pre-header {
+ background: #eee;
+ color: #eee;
+ font-size: 5px;
+}
+
+.lucas-newsletter p {
+ font-family: 'Vollkorn', serif;
+ margin: 20px;
+ font-size: 16px;
+ font-weight: 300;
+ text-align: center;
+ line-height: 1.5;
+}
+
+.lucas-newsletter h3 {
+ font-family: 'Vollkorn', serif;
+ text-align: center;
+ color: rgb(79, 79, 79) !important;
+}
+
+.lucas-newsletter img {
+ max-width: 100%
+}
+
+.lucas-newsletter h1, .lucas-newsletter h2, .lucas-newsletter h3, .lucas-newsletter h4, .lucas-newsletter h5, .lucas-newsletter h6 {
+ font-family: 'Fira Sans', sans-serif;
+ text-align: center;
+ color: black; !important;
+ margin: 20px 0;
+}
+
+.lucas-newsletter a {
+ text-decoration: none;
+}
+
+.lucas-newsletter h1:hover {
+ color: #46C9BE;
+}
+
+.lucas-newsletter article {
+  display: none; /* Will be changed with JS */
+}
+
+.lucas-newsletter .article h4:hover {
+ color: #46C9BE;
+}
+
+.lucas-newsletter hr.small {
+ border-top: dotted 1px;
+ width: 95%;
+ margin: 20px auto;
+}
+
+.lucas-newsletter hr.big {
+ border-top: solid 1px;
+ width: 95%;
+ margin: 20px auto;
+}
+
+.lucas-newsletter .button {
+ text-align: center;
+ margin: 10px;
+}
+
+.lucas-newsletter .button a {
+ margin: 0 auto;
+ color: white;
+ background: #46C9BE;
+ display: inline-block;
+ padding: 10px 20px;
+ border-radius: 5px;
+}
+
+.lucas-newsletter .button a:hover {
+ color: black;
+}
+
+.lucas-newsletter .footer {
+ max-width: 500px;
+ margin: 0 auto;
+ overflow: hidden;
+ border-radius: 5px;
+ text-align: center;
+ padding: 20px;
+ font-size: 10px;       ;
+}
+
+.lucas-newsletter .footer a {
+ color: black;
+}
+
+.lucas-newsletter .footer a:hover {
+ color: #46C9BE;
+}

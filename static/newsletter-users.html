@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Users - Lucas Newsletter</title>
+
+  <link rel="stylesheet" href="/static/newsletter.css">
+  <link rel="stylesheet" href="/static/lucas-newsletter.css">
+
+  <script src="/static/jquery.min.js"></script>
+  <script src="/static/newsletter-users.js"></script>
+</head>
+<body>
+  <nav>
+    <h1>Lucas Newsletter</h1>
+    <a href="/newsletter/">Newsletter schreiben</a>
+    <a href="/newsletter/users/">Users</a>
+  </nav>
+
+  <main id="users">
+    <table id="user-table">
+      <tr>
+        <th>Mail</th>
+        <th>Datum</th>
+        <th>Quelle</th>
+        <th>Status</th>
+      </tr>
+    </table>
+    <p id="loading-info">Inhalt wird geladen ...</p>
+  </main>
+
+  <div id="notification"></div>
+</body>
+</html>
