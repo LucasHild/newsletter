@@ -15,7 +15,8 @@ from pymongo import MongoClient
 
 def connection():
     """Connection to MongoDB database"""
-    uri = "mongodb://" + config.mongodb_username + ":" + config.mongodb_password + "@" + config.mongodb_host + ":" + config.mongodb_port + "/" + config.mongodb_db
+    uri = "mongodb://" + config.mongodb_username + ":" + config.mongodb_password + \
+        "@" + config.mongodb_host + ":" + config.mongodb_port + "/" + config.mongodb_db
     client = MongoClient(uri)
     db = client.newsletter
     return db, client
@@ -112,7 +113,8 @@ def newsletter_api_send_test():
         css = f.read()
 
     # Generate and compile html
-    html_external_css = "<html><head><meta charset='utf-8'><style>" + css + "</style></head><body>" + raw_html + "</body></html>"
+    html_external_css = "<html><head><meta charset='utf-8'><style>" + \
+        css + "</style></head><body>" + raw_html + "</body></html>"
     html = inline_css(html_external_css)
 
     if type == "test":
@@ -236,7 +238,6 @@ def newsletter_subscribe():
         smtpsession.login(smtpuser, smtppass)
         smtpsession.sendmail(smtpuser, mail, msg.as_string())
 
-
         return jsonify({"success": "subscribed"})
 
     else:
@@ -268,7 +269,7 @@ def newsletter_confirm():
         # Check whether confirmation code is valid
         if confirmation_code == user["state"]:
             db.users.update_one({"mail": mail},
-                            {"$set": {"state": "confirmed"}})
+                                {"$set": {"state": "confirmed"}})
 
             return "<h1 style='font-family: sans-serif'>Du hast den Newsletter erfolgreich abonniert!</h1>"
         else:

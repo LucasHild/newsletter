@@ -65,9 +65,30 @@ $(document).ready(function () {
         if (hasContent) {
           // Show article
           $('.lucas-newsletter #' + section + '-article-' + number).css('display', 'block');
+
+          // Show it, because MS Outlook doesn't support display: none
+          $('.lucas-newsletter #' + section + '-article-' + number).css('width', 'initial');
+          $('.lucas-newsletter #' + section + '-article-' + number).css('max-height', 'initial');
+          $('.lucas-newsletter #' + section + '-article-' + number).css('overflow', 'initial');
+          $('.lucas-newsletter #' + section + '-article-' + number).css('mso-hide', 'initial');
+          $('.lucas-newsletter #' + section + '-article-' + number).css('height', 'initial');
+          $('.lucas-newsletter #' + section + '-article-' + number).css('font-size', 'initial');
+          $('.lucas-newsletter #' + section + '-article-' + number).css('line-height', 'initial');
+          $('.lucas-newsletter #' + section + '-article-' + number).css('margin', 'initial');
         } else {
           // Hide article
           $('.lucas-newsletter #' + section + '-article-' + number).css('display', 'none');
+
+          // Hide it, because MS Outlook doesn't support display: none
+          $('.lucas-newsletter #' + section + '-article-' + number).css('width', '0px');
+          $('.lucas-newsletter #' + section + '-article-' + number).css('max-height', '0px');
+          $('.lucas-newsletter #' + section + '-article-' + number).css('overflow', 'hidden');
+          $('.lucas-newsletter #' + section + '-article-' + number).css('mso-hide', 'all');
+          $('.lucas-newsletter #' + section + '-article-' + number).css('height', '0');
+          $('.lucas-newsletter #' + section + '-article-' + number).css('font-size', '0');
+          $('.lucas-newsletter #' + section + '-article-' + number).css('line-height', '0');
+          $('.lucas-newsletter #' + section + '-article-' + number).css('margin', '0');
+
         }
       }
     }

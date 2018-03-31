@@ -56,6 +56,16 @@
 
 .lucas-newsletter article {
   display: none; /* Will be changed with JS */
+
+  /* Hide it, because MS Outlook doesn't support display: none */
+  width: 0px;
+  max-height: 0px;
+  overflow: hidden;
+  mso-hide: all;
+  height: 0;
+  font-size: 0;
+  line-height: 0;
+  margin: 0;
 }
 
 .lucas-newsletter .article h4:hover {
