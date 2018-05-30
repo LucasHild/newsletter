@@ -1,13 +1,36 @@
-# newsletter
-Newsletter system for my blog
+# Newsletter
 
-### [newsletter.py](https://github.com/Lanseuo/newsletter/blob/master/newsletter.py)
+The frontend and backend that let me create and send e-mail newsletters via Mailerlite. The frontend is powered by Vue.js and the backend runs on Flask.
 
-WebApp and API
+![Header](screenshot.jpg)
 
-The WebApp lets you create and send new issues and lets you know who is subscribed to the newsletter
-The API is written in [Flask](http://flask.pocoo.org/). There are several API endpoints for subscribing and unsubscribing to the newsletter. The data is stored in a MongoDB-Database.
+## Installation
 
-### [template.html](https://github.com/Lanseuo/newsletter/blob/master/template.html)
+```
+cd frontend
+npm install
 
-Mail template
+cd backend
+pip install -r requirements.txt
+```
+
+## Development
+
+```
+cd frontend
+npm run dev
+
+cd backend
+flask run
+```
+
+## Made with
+
+- [Vue.js](https://vuejs.org) - web framework
+- [axios](https://github.com/axios/axios) - http client
+- [Flask](http://flask.pocoo.org) - microframework for api
+
+## Meta
+
+Lucas Hild - https://lucas-hild.de
+This project is licensed under the MIT License - see the LICENSE file for details

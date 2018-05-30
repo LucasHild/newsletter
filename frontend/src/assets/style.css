@@ -1,0 +1,55 @@
+body {
+    margin: 0;
+}
+
+:root {
+    --primary-color: rgb(23, 92, 93);
+    --text-color: #2c3e50;
+    --red: #C62828;
+    --green: #00b45d;
+}
+
+* {
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+body {
+    font-family: "Avenir", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: var(--text-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+a:hover {
+    color: var(--primary-color);
+}
+
+.button {
+    background-color: var(--primary-color);
+    display: inline-block;
+    color: white;
+    padding: 15px 30px;
+    cursor: pointer;
+    margin: 5px 0; 
+}
+
+input, textarea {
+    display: block;
+    width: 100%;
+    margin: 0;
+    border: none;
+    background: rgb(223, 224, 221);
+    padding: 15px;
+    margin: 20px 0;
+    text-align: center;
+    font-family: "Avenir", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+}
