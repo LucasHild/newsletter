@@ -6,10 +6,14 @@
             <input v-model="data.link" placeholder="Link">
             <textarea v-model="data.description" placeholder="Description"/>
 
-            <h4>Auto-Fill-In for Blog Articles</h4>
-            <p class="blog-suggestion" v-for="blogArticle in lastBlogArticles" @click="setDataFromBlogArticle(blogArticle)" :key="blogArticle.permalink">
-                {{ blogArticle.title }}
-            </p>
+                            <p>{{ noAutoFillIn }}</p>
+
+            <div v-if="noAutoFillIn == undefined">
+                <h4>Auto-Fill-In for Blog Articles</h4>
+                <p class="blog-suggestion" v-for="blogArticle in lastBlogArticles" @click="setDataFromBlogArticle(blogArticle)" :key="blogArticle.permalink">
+                    {{ blogArticle.title }}
+                </p>
+            </div>
 
             <p @click="saveModal" class="button">Save</p>
         </Modal>
@@ -18,10 +22,10 @@
             <div class="left" v-if="data.image" :style="'background-image: url(' + data.image + ')'"></div>
             <div class="left" v-else :style="'background-image: url(' + require('@/assets/no-image.jpg') + ')'"></div>
             <div class="right">
-                <h3>{{ data.title }}</h3>
-                <p>{{ data.description }}</p>
-                <a v-if="data.link" class="button" :href="data.link" target="_blank">Visit</a>
-                <div>
+                <h3>{{ data.title || 'No title' }}</h3>
+                <p>{{ data.description || 'No description' }}</p>
+                <a v-if="data.link" class="visit-button button" :href="data.link" target="_blank">Visit</a>
+                <div class="icons">
                     <svg class="edit-icon" @click="showEditModal" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                         <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
                         <path d="M0 0h24v24H0z" fill="none"/>
@@ -42,12 +46,12 @@ import Api from '@/Api'
 export default {
     name: 'article-preview',
 
-    props: ['data'],
+    props: ['data', 'no-auto-fill-in'],
 
     data() {
         return {
-            showModal: false,
-            lastBlogArticles: []
+            showModal: true,
+            lastBlogArticles: [],
         }
     },
 
@@ -90,8 +94,10 @@ export default {
 
 .grid {
     display: grid;
+    grid-template-columns: 310px auto;
     grid-template-columns: 1fr 2fr;
-    height: 200px;
+    grid-column-gap: 20px;
+    min-height: 200px;
 }
 
 .left {
@@ -99,6 +105,20 @@ export default {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+.right {
+    position: relative;
+}
+
+.visit-button:hover {
+    color: rgb(196, 196, 196);
+}
+
+.icons {
+    position: absolute;
+    top: 20px;
+    right: 20px;
 }
 
 .edit-icon:hover {

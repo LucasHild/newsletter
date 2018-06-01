@@ -8,7 +8,7 @@
             <h1>Newsletter</h1>
 
             <input type="text" v-model="subject" placeholder="Subject">
-            <input type="text" v-model="introduction" placeholder="Introduction">
+            <textarea type="text" v-model="introduction" placeholder="Introduction"></textarea>
 
             <h2>Neue Artikel auf meinem Blog</h2>
             <ArticlePreview v-for="article in blogArticles" :data="article" :key="article.id" @delete="deleteArticle"/>
@@ -19,7 +19,7 @@
 
 
             <h2>Top 3 Artikel</h2>
-            <ArticlePreview v-for="article in topArticles" :data="article" :key="article.id" @delete="deleteArticle"/>
+            <ArticlePreview v-for="article in topArticles" no-auto-fill-in :data="article" :key="article.id" @delete="deleteArticle"/>
             <svg class="add-article" @click="addArticle('top')" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
                 <path d="M0 0h24v24H0z" fill="none"/>
@@ -226,5 +226,17 @@ export default {
 
 .message-success {
     color: var(--green);
+}
+
+@media (max-width: 750px) {
+    .box {
+        background-color: white;
+        width: 100%;
+        margin: 0;
+        padding: 20px;
+        height: 100vh;
+        max-height: 100vh;
+        overflow: scroll;
+    }
 }
 </style>
